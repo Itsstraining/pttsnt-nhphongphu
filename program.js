@@ -26,7 +26,7 @@ function result(naturalNumber) {
     if(naturalNumber % findPrimeNumber(i) == 0){
       resultArray.push(i);
       naturalNumber = naturalNumber / i;
-      resultArray.push(naturalNumber);
+      // resultArray.push(naturalNumber);
       console.log(resultArray);
     }
   }
