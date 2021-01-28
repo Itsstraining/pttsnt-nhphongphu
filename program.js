@@ -21,15 +21,22 @@ function findPrimeNumber(naturalNumber) {
 function result(naturalNumber) {
   let resultArray = [];
 
-  while(!findPrimeNumber(naturalNumber)){
-    for(let i = 0; i < naturalNumber; i++){
-      if(findPrimeNumber(i) && naturalNumber % i == 0){
-        resultArray.push(i);
-        naturalNumber = naturalNumber / i;
-        break;
+  if (naturalNumber == 0) {
+    // resultArray.push(0);
+    // console.log(0)
+  } else {
+    while (!findPrimeNumber(naturalNumber)) {
+      for (let i = 0; i < naturalNumber; i++) {
+        if (findPrimeNumber(i) && naturalNumber % i == 0) {
+          resultArray.push(i);
+          naturalNumber = naturalNumber / i;
+          break;
+        }
       }
     }
   }
+
+
   resultArray.push(naturalNumber);
   return resultArray;
 }
@@ -39,10 +46,16 @@ function main(input) {
   result(naturalNumber);
   let resultOutput = result(naturalNumber);
   let space = " ";
-  for(let i = 0; i < resultOutput.length; i++){
-    space = space + " " + resultOutput[i]
+  if (resultOutput == 0) {
+    space = resultOutput[0]
+    console.log(space)
+  } else {
+    for (let i = 0; i < resultOutput.length; i++) {
+      space = space + " " + resultOutput[i]
+    }
+    console.log(space)
   }
-  console.log(space)
+
 }
 
 
