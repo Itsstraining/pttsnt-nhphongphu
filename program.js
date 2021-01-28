@@ -26,21 +26,11 @@ function result(naturalNumber) {
     if(naturalNumber % findPrimeNumber(i) == 0){
       resultArray.push(i);
       naturalNumber = naturalNumber / i;
+      console.log(resultArray.toString());
       // resultArray.push(naturalNumber);
-      console.log(resultArray);
     }
   }
 
-
-  // for (let i = naturalNumber; i == 2; i--) {
-  //   if (findPrimeNumber(i) % naturalNumber == 0) {
-  //     resultArray.push(i);
-  //     naturalNumber = naturalNumber / i;
-  //     resultArray.push(naturalNumber);
-  //     console.log(resultArray);
-
-  //   }
-  // }
 }
 
 function main(input) {
