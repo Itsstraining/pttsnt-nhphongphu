@@ -20,25 +20,30 @@ function findPrimeNumber(naturalNumber) {
 
 function result(naturalNumber) {
   let resultArray = [];
-  let tempNaturalNumber = naturalNumber;
 
-  for (let i = 0; i <tempNaturalNumber; i++ ){
-    if(naturalNumber % findPrimeNumber(i) == 0){
-      resultArray.push(i);
-      naturalNumber = naturalNumber / i;
-      console.log(resultArray.toString());
-      // resultArray.push(naturalNumber);
+  while(!findPrimeNumber(naturalNumber)){
+    for(let i = 0; i < naturalNumber; i++){
+      if(findPrimeNumber(i) && naturalNumber % i == 0){
+        resultArray.push(i);
+        naturalNumber = naturalNumber / i;
+        break;
+      }
     }
   }
-
+  resultArray.push(naturalNumber);
+  return resultArray;
 }
 
 function main(input) {
   let naturalNumber = parseInt(input.split(" "));
   findPrimeNumber(naturalNumber);
   result(naturalNumber);
-  
-
+  let resultOutput = result(naturalNumber);
+  let space = " ";
+  for(let i = 0; i < resultOutput.length; i++){
+    space = space + " " + resultOutput[i]
+    console.log(space)
+  }
 }
 
 
