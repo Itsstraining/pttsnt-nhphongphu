@@ -36,14 +36,13 @@ function result(naturalNumber) {
 
 function main(input) {
   let naturalNumber = parseInt(input.split(" "));
-  findPrimeNumber(naturalNumber);
   result(naturalNumber);
   let resultOutput = result(naturalNumber);
   let space = " ";
   for(let i = 0; i < resultOutput.length; i++){
     space = space + " " + resultOutput[i]
-    console.log(space)
   }
+  console.log(space)
 }
 
 
